@@ -19,6 +19,7 @@
             padding: 25px;
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
         }
         h2 {
             text-align: center;
@@ -94,6 +95,27 @@
 
             <button type="submit">إرسال</button>
         </form>
+    </div>
+
+    <div class="container">
+        <h2>نموذج استعلام البيانات</h2>
+        <form method="GET">
+            <label for="query-id">رقم الهوية</label>
+            <input type="text" id="query-id" name="id_query" placeholder="أدخل رقم الهوية">
+            <button type="submit">بحث</button>
+        </form>
+        <div>
+            <h3>نتائج الاستعلام:</h3>
+            <script>
+                const params = new URLSearchParams(window.location.search);
+                const id = params.get("id_query");
+                if (id) {
+                    document.write(`<p>تم إدخال رقم الهوية: <strong>${id}</strong></p>`);
+                } else {
+                    document.write("<p>لم يتم إدخال أي رقم هوية بعد.</p>");
+                }
+            </script>
+        </div>
     </div>
 </body>
 </html>
