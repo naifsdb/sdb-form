@@ -30,7 +30,7 @@
             margin-bottom: 8px;
             font-weight: bold;
         }
-        input[type="text"], input[type="number"], input[type="file"] {
+        input[type="text"], input[type="number"], input[type="file"], input[type="email"] {
             width: 100%;
             padding: 10px;
             margin-bottom: 20px;
@@ -55,7 +55,7 @@
 <body>
     <div class="container">
         <h2>نموذج تقديم البيانات</h2>
-        <form action="/submit" method="post" enctype="multipart/form-data">
+        <form action="https://formspree.io/f/mwkgrxyz" method="POST" enctype="multipart/form-data">
             <label for="first-name">الاسم الأول</label>
             <input type="text" id="first-name" name="first_name" required>
 
@@ -79,6 +79,9 @@
 
             <label for="job-title">المسمى الوظيفي</label>
             <input type="text" id="job-title" name="job_title" required>
+
+            <label for="email">البريد الإلكتروني</label>
+            <input type="email" id="email" name="_replyto" required>
 
             <label for="marriage-cert">شهادة الزواج (PDF أو صورة)</label>
             <input type="file" id="marriage-cert" name="marriage_certificate" accept=".pdf, image/*" required>
